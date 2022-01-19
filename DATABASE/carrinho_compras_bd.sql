@@ -28,7 +28,7 @@ CREATE TABLE `order_buy` (
   `payment_form` varchar(100) DEFAULT NULL,
   `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `order_buy` (
 
 LOCK TABLES `order_buy` WRITE;
 /*!40000 ALTER TABLE `order_buy` DISABLE KEYS */;
-INSERT INTO `order_buy` VALUES (2,1,'dinheiro','2021-12-27 15:47:34'),(3,2,'cartão','2021-12-27 15:47:59'),(4,2,'cartão','2021-12-27 15:48:52'),(5,1,'dinheiro','2021-12-27 15:50:10'),(6,1,'dinheiro','2021-12-27 15:51:22'),(7,1,'dinheiro','2021-12-27 15:51:38'),(8,1,'dinheiro','2021-12-27 15:51:59'),(9,1,'dinheiro','2021-12-27 15:52:59'),(10,1,'dinheiro','2021-12-27 15:53:11'),(11,1,'dinheiro','2021-12-27 15:53:36'),(12,1,'dinheiro','2021-12-27 15:53:54'),(13,1,'dinheiro','2021-12-27 16:46:20'),(14,1,'dinheiro','2021-12-27 16:47:16'),(15,1,'dinheiro','2021-12-27 16:47:50'),(16,1,'dinheiro','2021-12-27 16:50:07'),(17,1,'dinheiro','2021-12-27 16:50:25'),(18,1,'dinheiro','2021-12-27 16:50:49'),(19,1,'dinheiro','2021-12-27 16:51:26'),(20,1,'dinheiro','2021-12-27 16:53:03'),(21,1,'dinheiro','2021-12-27 16:53:12'),(22,NULL,'','2021-12-27 21:14:10'),(23,NULL,'dinheiro','2021-12-27 21:15:38'),(24,NULL,'dinheiro','2021-12-27 21:15:48'),(25,NULL,'dinheiro','2021-12-27 21:16:37'),(26,NULL,'','2021-12-27 21:17:36'),(27,NULL,'','2021-12-27 21:17:54'),(28,NULL,'','2021-12-27 21:17:59'),(29,NULL,'','2021-12-27 21:21:37'),(30,NULL,'','2021-12-27 21:21:50'),(31,NULL,'','2021-12-27 21:22:22'),(32,NULL,'','2021-12-27 21:23:09'),(33,NULL,'dinheiro','2021-12-27 21:24:14'),(34,NULL,'dinheiro','2021-12-27 21:24:32'),(35,NULL,'','2021-12-27 21:24:43'),(36,NULL,'','2021-12-27 21:26:55'),(37,NULL,'','2021-12-27 21:27:16'),(38,NULL,'','2021-12-27 21:27:16'),(39,NULL,'','2021-12-27 21:27:54'),(40,NULL,'','2021-12-27 21:29:46'),(41,NULL,'dinheiro','2021-12-27 21:30:44'),(42,NULL,'','2021-12-28 00:27:17'),(43,NULL,'','2021-12-28 00:29:13'),(44,NULL,'','2021-12-28 00:51:25');
+INSERT INTO `order_buy` VALUES (85,NULL,'cash','2022-01-19 01:21:33'),(86,NULL,'credit','2022-01-19 01:35:32'),(87,NULL,'debit','2022-01-19 01:36:53'),(88,NULL,'credit','2022-01-19 01:50:05'),(89,NULL,'cash','2022-01-19 01:50:40'),(90,NULL,'credit','2022-01-19 01:51:17'),(91,NULL,'credit','2022-01-19 01:51:56'),(92,NULL,'cash','2022-01-19 01:55:54'),(93,NULL,'debit','2022-01-19 02:02:58'),(94,NULL,'debit','2022-01-19 02:13:58'),(95,NULL,'cash','2022-01-19 02:19:04'),(96,NULL,'credit','2022-01-19 02:23:43'),(97,NULL,'credit','2022-01-19 02:23:58'),(98,NULL,'credit','2022-01-19 02:24:14'),(99,NULL,'credit','2022-01-19 02:24:31'),(100,NULL,'cash','2022-01-19 02:24:39'),(101,NULL,'debit','2022-01-19 02:24:53'),(102,NULL,'credit','2022-01-19 02:41:50');
 /*!40000 ALTER TABLE `order_buy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `order_products` (
 
 LOCK TABLES `order_products` WRITE;
 /*!40000 ALTER TABLE `order_products` DISABLE KEYS */;
-INSERT INTO `order_products` VALUES (1,20,2),(1,21,2),(1,34,2),(1,41,2),(2,20,1),(2,21,1),(2,34,1),(2,41,1),(4,20,1),(4,21,1),(4,34,1),(4,41,1);
+INSERT INTO `order_products` VALUES (1,85,1),(1,90,5),(1,94,1),(1,95,1),(1,96,1),(2,85,2),(2,89,1),(2,90,9),(3,85,1),(3,89,1),(3,90,4),(3,91,1),(3,92,1),(3,93,2),(3,94,1),(4,86,1),(4,90,2),(4,97,1),(4,100,1),(4,101,6),(5,87,1),(5,90,2),(5,98,2),(5,102,1),(6,88,1),(6,90,4),(6,91,1),(6,98,1),(6,99,1),(6,102,1);
 /*!40000 ALTER TABLE `order_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,6 +82,8 @@ CREATE TABLE `products` (
   `price` float DEFAULT '0',
   `image` varchar(250) DEFAULT NULL,
   `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `description` text,
+  `active` enum('y','n') NOT NULL DEFAULT 'y',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -92,7 +94,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Tênis de Caminhada Leve Confortável',179.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg','2021-12-27 15:20:32'),(2,'Tênis VR Caminhada Confortável Borracha',139.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg','2021-12-27 15:20:32'),(3,'Tênis Adidas Duramo Lite 2.0',219.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg','2021-12-27 15:20:32'),(4,'Tênis VR Caminhada Confortável Detalhes Couro Masculino',149.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg','2021-12-27 15:20:32'),(5,'Tênis Adidas Duramo Lite 3.0',159.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg','2021-12-27 15:20:32'),(6,'Tênis de Caminhada Profissional',329,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg','2021-12-27 15:20:32');
+INSERT INTO `products` VALUES (1,'Tênis de Caminhada Leve Confortável',179.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg','2021-12-27 15:20:32',NULL,'y'),(2,'Tênis VR Caminhada Confortável Borracha',139.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg','2021-12-27 15:20:32',NULL,'y'),(3,'Tênis Adidas Duramo Lite 2.0',219.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg','2021-12-27 15:20:32',NULL,'y'),(4,'Tênis VR Caminhada Confortável Detalhes Couro Masculino',149.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg','2021-12-27 15:20:32',NULL,'y'),(5,'Tênis Adidas Duramo Lite 3.0',159.9,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg','2021-12-27 15:20:32',NULL,'y'),(6,'Tênis de Caminhada Profissional',329,'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg','2021-12-27 15:20:32',NULL,'y');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +119,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (1,2),(2,3),(3,5),(4,4),(5,10),(6,1);
+INSERT INTO `stock` VALUES (1,0),(2,0),(3,0),(4,0),(5,5),(6,2);
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -130,4 +132,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-28 15:42:39
+-- Dump completed on 2022-01-18 23:49:32

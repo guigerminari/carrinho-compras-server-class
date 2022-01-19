@@ -75,7 +75,7 @@ class Product{
             $newProduct = array("title"=>$this->title, "price"=>$this->price);
         }
 
-        $conn->insert($newProduct);
+        return $conn->insert($newProduct);
     }
 
     /**

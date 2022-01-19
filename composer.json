@@ -1,0 +1,16 @@
+{
+    "name": "ggerminari/carrinhocompras",
+    "description": "Carrinho de compras experimental didático",
+    "authors": [
+        {
+            "name": "guilherme_germinari",
+            "email": "gags.guilherme@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\":"app/",
+            "Lib\\":"lib/"
+        }
+    }
+}
